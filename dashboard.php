@@ -99,7 +99,19 @@ hr{
         <a href="#">SIGN OUT</a>
   </div>
   <div id="page-wrap">
-    <p>Welcome: USERNAME WILL BE HERE</p>
+    <p><?php
+//include_once 'connection-script.php';
+ error_reporting(E_ERROR | E_PARSE);
+session_start();
+if(!isset($_SESSION['account']))
+{
+  header('Location: login.php');
+}
+else{
+  echo $_SESSION['account'];
+}
+
+?></p>
         <br>
         <p>You logged in from IP Address: IP ADDRESS(This IP has recorded for the security purpose)</p>
         <p>You logged in at: TIME AND DATE</p>

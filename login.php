@@ -51,7 +51,7 @@ button{
 </header>
 <div class="logo">LOGO</div>
 <h4>stonegate banking Service</h4>
- <form action="/action_page.php">
+ <form action="signin-script.php" method="post">
   <div class="div">
     <label>Account#: </label>
     <input type="text" name="account" placeholder="Enter Your Account Number">

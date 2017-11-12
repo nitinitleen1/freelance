@@ -55,7 +55,7 @@ button{
 <div class="logo">LOGO</div>
 <h1>Login Step 2</h1>
 <h4>Enter Pin to Proceed</h4>
- <form action="">
+ <form action="verify-script.php" method="post">
   <div class="div">
     <label>PIN: </label>
     <input type="text" name="pin" placeholder="Enter PIN">
