@@ -1,3 +1,16 @@
+<?php   
+      session_start();
+      if (!empty($_SESSION['count1']))
+        { 
+          session_destroy();
+          if(!isset($_SESSION['account'])){
+                header("Location: login.php");
+             }  
+        }
+      else
+        $_SESSION['count']=1;
+      
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -86,7 +99,7 @@ hr{
         <hr>
         <a href="#">ACCOUNT STATEMENT</a>
         <hr>
-        <a href="#">MONEY TRANSEFER</a>
+        <a href="transfer.php">MONEY TRANSEFER</a>
         <hr>
         <a href="#">e-bill PAYMENT</a>
         <hr>
@@ -121,3 +134,4 @@ else{
 </div>
 </body>
 </html>
+

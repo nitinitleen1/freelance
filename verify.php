@@ -1,3 +1,16 @@
+<?php   
+      session_start();
+      if (!empty($_SESSION['count']))
+        { 
+          session_destroy();
+          if(!isset($_SESSION['account'])){
+                header("Location: login.php");
+             }  
+        }
+      else
+        $_SESSION['count']=1;
+      
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,3 +80,6 @@ button{
 
 </body>
 </html>
+<?php
+  session_destroy();
+?>

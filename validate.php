@@ -1,3 +1,16 @@
+<?php   
+      session_start();
+      if (!empty($_SESSION['count2']))
+        { 
+          session_destroy();
+          if(!isset($_SESSION['account'])){
+                header("Location: login.php");
+             }  
+        }
+      else
+        $_SESSION['count2']=1;
+      
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -162,3 +175,6 @@ time{
   </div>
 </body>
 </html>
+<?php
+  session_destroy();
+?>

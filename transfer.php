@@ -1,3 +1,16 @@
+<?php   
+      session_start();
+      if (!empty($_SESSION['count2']))
+        { 
+          session_destroy();
+          if(!isset($_SESSION['account'])){
+                header("Location: login.php");
+             }  
+        }
+      else
+        $_SESSION['count2']=1;
+      
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -137,7 +150,7 @@ button {
   <div id="page-wrap">
     <p>Plaese make sure that you have enough funds availbe in your account to transfer. Also don't forget to validate beneficiary's <br>account number and routing number of receiving banks.</p>
         <br>
-        <form id="form1" runat="server">     
+        <form id="form1" runat="server" action ="transfer-script.php" method="post">     
             <table id="table1"; cellspacing="20px" cellpadding="10%";>  
                <tr>  
                       <td  align="top" class="td1">Beneficiary's Bank Name:</td>  
@@ -193,3 +206,6 @@ button {
   </div>
 </body>
 </html>
+<?php
+  session_destroy();
+?>
